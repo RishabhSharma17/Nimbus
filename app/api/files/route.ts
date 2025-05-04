@@ -6,13 +6,11 @@ import { eq, and, isNull } from "drizzle-orm";
 
 export async function GET(request: NextRequest) {
   try {
-    // Check authentication
     const { userId } = await auth();
     if (!userId) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    // Get query parameters
     const searchParams = request.nextUrl.searchParams;
     const queryUserId = searchParams.get("userId");
     const parentId = searchParams.get("parentId");

@@ -297,7 +297,7 @@ export default function SignUpForm() {
               </p>
             </div>
           </div>
-
+          
           <Button
             type="submit"
             color="primary"

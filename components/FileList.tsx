@@ -45,12 +45,10 @@ export default function FileList({
     Array<{ id: string; name: string }>
   >([]);
 
-  // Modal states
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [emptyTrashModalOpen, setEmptyTrashModalOpen] = useState(false);
   const [selectedFile, setSelectedFile] = useState<FileType | null>(null);
 
-  // Fetch files
   const fetchFiles = async () => {
     setLoading(true);
     try {
@@ -58,7 +56,6 @@ export default function FileList({
       if (currentFolder) {
         url += `&parentId=${currentFolder}`;
       }
-
       const response = await axios.get(url);
       setFiles(response.data);
     } catch (error) {

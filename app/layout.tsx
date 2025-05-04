@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Droply",
+  title: "Nimbus",
   description: "Secure cloud storage for your images, powered by ImageKit",
 };
 
@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en" className="dark">
+      <html lang="en" className="dark" suppressHydrationWarning>
         <body
           className={`${inter.variable} antialiased bg-background text-foreground`}
         >
